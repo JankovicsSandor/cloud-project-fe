@@ -18,7 +18,7 @@ export class LocationDataProviderService extends BaseDataProviderService {
     return this.post<CreateLocation>('api/location', newItem);
   }
 
-  getOneLocationDetail(locationID: number) {
+  getOneLocationDetail(locationID: string) {
     return this.get<LocationDetail>(`api/location/detail/${locationID}`);
   }
 

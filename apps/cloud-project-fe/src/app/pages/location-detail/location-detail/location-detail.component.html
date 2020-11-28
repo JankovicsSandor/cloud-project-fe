@@ -1,1 +1,4 @@
-<p>location-detail works!</p>
+<div *ngFor="let item of detailValue$|async" class="mt-4 mb-3">
+    <location-detail-view [locationData]="item"></location-detail-view>
+    <mat-divider [inset]="true" class="mt-4"></mat-divider>
+</div>

@@ -10,6 +10,6 @@ export class LocationDetailService {
   private locationData$: ReplaySubject<LocationDetail> = new ReplaySubject();
 
   getOneLocationData(id: number) {
-    this.locationService.getOneLocationDetail(id);
+    this.locationService.getOneLocationDetail(id + '');
   }
 }
