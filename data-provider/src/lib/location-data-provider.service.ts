@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BaseDataProviderService } from './base-data-provider.service';
 import { environment } from './../../../apps/cloud-project-fe/src/environments/environment';
-import { LocationItem } from '@shared';
+import { CreateLocation, LocationDetail, LocationItem } from '@shared';
 
 @Injectable()
 export class LocationDataProviderService extends BaseDataProviderService {
@@ -10,7 +10,19 @@ export class LocationDataProviderService extends BaseDataProviderService {
     super(environment.backendUrl, http);
   }
 
-  getLocationList() {
-    return this.get<LocationItem[]>('list');
+  refreshLocationList() {
+    return this.get<LocationItem[]>('api/location/list');
+  }
+
+  createNewLocation(newItem: CreateLocation) {
+    return this.post<CreateLocation>('api/location', newItem);
+  }
+
+  getOneLocationDetail(locationID: number) {
+    return this.get<LocationDetail>(`api/location/detail/${locationID}`);
+  }
+
+  deleteLocation(locationIdToDelete: number) {
+    return this.delete<any>(`api/location/${locationIdToDelete}`);
   }
 }

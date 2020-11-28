@@ -25,8 +25,14 @@
               "apps/cloud-project-fe/src/favicon.ico",
               "apps/cloud-project-fe/src/assets"
             ],
-            "styles": ["apps/cloud-project-fe/src/styles.scss"],
-            "scripts": []
+            "styles": [
+              "apps/cloud-project-fe/src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -156,9 +162,7 @@
               "shared/tsconfig.lib.json",
               "shared/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -196,9 +200,7 @@
               "data-provider/tsconfig.lib.json",
               "data-provider/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

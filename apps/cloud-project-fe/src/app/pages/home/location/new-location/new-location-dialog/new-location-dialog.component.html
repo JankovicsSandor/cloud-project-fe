@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Add new location</h1>
+<div mat-dialog-content>
+    <form [formGroup]="newPlaceForm">
+        <p>Name of the place</p>
+        <mat-form-field appearance="outline">
+            <mat-label>Place name</mat-label>
+            <input matInput formControlName="placeName">
+        </mat-form-field>
+        <p>Custom label for the place</p>
+        <mat-form-field appearance="outline">
+            <mat-label>Custom name</mat-label>
+            <input matInput formControlName="customPlaceName">
+        </mat-form-field>
+    </form>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-stroked-button (click)="onNoClick()">Exit</button>
+    <button mat-stroked-button color="accent" [mat-dialog-close]="newPlaceForm.value" cdkFocusInitial>Ok</button>
+</div>

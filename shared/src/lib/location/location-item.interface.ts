@@ -1,5 +1,5 @@
 export interface LocationItem {
-  Id: number;
-  Name: string;
-  LocationName: string;
+  id: number;
+  name: string;
+  locationName: string;
 }

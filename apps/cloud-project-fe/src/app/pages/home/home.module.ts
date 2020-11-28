@@ -2,14 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
-import { LocationListModule } from './location-list/location-list.module';
-import { NewLocationComponent } from './new-location/new-location.component';
-import { NewLocationModule } from './new-location/new-location.module';
+import { LocationListModule } from './location/location-list/location-list.module';
+import { NewLocationModule } from './location/new-location/new-location.module';
+import { LocationListService } from './location/location-list.service';
 
 const routes: Routes = [{ path: '', component: HomeComponent }];
 
 @NgModule({
-  declarations: [HomeComponent, NewLocationComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), LocationListModule, NewLocationModule],
+  declarations: [HomeComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    LocationListModule,
+    NewLocationModule,
+  ],
+  providers: [LocationListService],
 })
 export class HomeModule {}

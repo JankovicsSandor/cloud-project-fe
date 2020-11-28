@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [],
   imports: [HttpClientModule],
   providers: [LocationDataProviderService],
-  exports: [LocationDataProviderService],
 })
 export class DataProviderModule {
   constructor() {}

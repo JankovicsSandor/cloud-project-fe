@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { LocationItem } from '@shared';
 
 @Component({
@@ -8,7 +8,13 @@ import { LocationItem } from '@shared';
 })
 export class LocationListViewComponent implements OnInit {
   @Input() itemList: LocationItem[] = [];
+
+  @Output() deleteEvent: EventEmitter<number> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
+
+  deleteItem(id: number) {
+    this.deleteEvent.emit(id);
+  }
 }
