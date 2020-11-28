@@ -122,6 +122,86 @@
           }
         }
       }
+    },
+    "shared": {
+      "projectType": "library",
+      "root": "shared",
+      "sourceRoot": "shared/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "shared/tsconfig.lib.json",
+            "project": "shared/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "shared/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "shared/src/test.ts",
+            "tsConfig": "shared/tsconfig.spec.json",
+            "karmaConfig": "shared/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "shared/tsconfig.lib.json",
+              "shared/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "data-provider": {
+      "projectType": "library",
+      "root": "data-provider",
+      "sourceRoot": "data-provider/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "data-provider/tsconfig.lib.json",
+            "project": "data-provider/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "data-provider/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "data-provider/src/test.ts",
+            "tsConfig": "data-provider/tsconfig.spec.json",
+            "karmaConfig": "data-provider/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "data-provider/tsconfig.lib.json",
+              "data-provider/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
